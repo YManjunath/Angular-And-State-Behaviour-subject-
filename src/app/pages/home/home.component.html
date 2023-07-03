@@ -1,0 +1,8 @@
+<div *ngIf="customerStatus$ | async as customerStatus">
+    <p>Hey! {{ customerStatus.profileName }}, your balance is {{ customerStatus.balance |currency }} in {{ customerStatus.orders.length }}</p>
+
+
+    <div *ngFor="let order of customerStatus.orders">
+        {{ order }}
+    </div>
+</div>

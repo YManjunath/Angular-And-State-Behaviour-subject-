@@ -1,0 +1,5 @@
+<h2>Add Balance</h2>
+<input #payment type="number">
+<button (click)="updateBalance(payment)">Update</button>
+
+<p>Your current balance is : {{balance | async | currency}}</p>

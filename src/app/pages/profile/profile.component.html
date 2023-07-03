@@ -1,0 +1,6 @@
+<h2>Please type your Name :</h2>
+<input #name type="text">
+<button  (click)="saveName(name.value)">Save Name</button>
+
+
+<p>{{ name$ | async }}</p>

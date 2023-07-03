@@ -1,0 +1,17 @@
+<div *ngIf="currentBalance | async as balance; else noBalance">
+    <h2>You have {{ balance | currency}} as balance, Add Your Order</h2>
+    <input #order type="number">
+    <button (click)="addOrder(order)" [disabled]="balance <= 0">add order</button>
+</div>
+<ng-template #noBalance>
+    <h2>Insufficient Balance, Please add</h2>
+</ng-template>
+
+
+<div *ngIf="orders | async as order">
+    <p>you have ({{order.length}}) orders</p>
+    <div *ngFor="let order of order">
+        {{order}}
+    </div>
+    
+</div>
